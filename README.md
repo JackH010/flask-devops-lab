@@ -1,4 +1,4 @@
-Flask DevOps Lab
+#Flask DevOps Lab
 
 A diagnostic Flask application used to practice Git, GitHub, and Docker workflows.
 Usage
@@ -17,6 +17,7 @@ The app runs on http://localhost:8080.
 
 Endpoints:
 
+'''
 /api/health — Returns a simple {"status": "ok"} response to confirm the app is running.
 
 
@@ -24,3 +25,4 @@ Endpoints:
 
 
 /api/report — Returns diagnostic information including the server hostname, Python version, and application uptime in seconds.
+'''
