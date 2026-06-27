@@ -1,4 +1,4 @@
-# Flap DevOps Lab
+# Flask DevOps Lab
 
 A diagnostic Flask application used to practice Git, GitHub, and Docker workflows.
 
