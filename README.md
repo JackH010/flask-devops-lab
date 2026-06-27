@@ -1,4 +1,5 @@
 Flask DevOps Lab
+
 A diagnostic Flask application used to practice Git, GitHub, and Docker workflows.
 Usage
 Activate the virtual environment, install dependencies, and start the app:
