@@ -42,6 +42,12 @@ def report():
     'uptime_seconds': round(time.time() - START_TIME, 2)
 })
 
+@app.get('/api/uptime')
+def uptime():
+    return jsonify({
+        'uptime_seconds': round(time.time() - START_TIME, 2)
+    })
+
 if __name__ == '__main__':
     app.run(
         host='0.0.0.0',
