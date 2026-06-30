@@ -27,6 +27,9 @@ def home():
         '<h1>{{ name }}</h1>'
         '<p>Version: {{ ver }}</p>'
         '<p><a href="/api/health">/api/health</a></p>'
+        '<p><a href="/api/config">/api/config</a></p>'
+        '<p><a href="/api/report">/api/report</a></p>'
+        '<p><a href="/api/uptime">/api/uptime</a></p>'
     )
     return render_template_string(
         html,
@@ -47,6 +50,17 @@ def uptime():
     return jsonify({
         'uptime_seconds': round(time.time() - START_TIME, 2)
     })
+
+@app.get('/api/status')
+def status():
+    cfg = load_config()
+    routes = sorted(str(rule) for rule in app.url_map.iter_rules())
+    return jsonify({
+        'app_name': cfg['app_name'],
+        'version': cfg['version'],
+        'routes': routes
+    })
+
 
 if __name__ == '__main__':
     app.run(
